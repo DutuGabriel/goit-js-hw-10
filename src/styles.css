@@ -3,7 +3,14 @@
 }
 
 .cat-info {
+  text-align: center;
+}
+
+.image-container {
   position: relative;
+  display: inline-block;
+  width: 500px;
+  height: 500px;
 }
 
 .cat-image {
@@ -22,6 +29,7 @@
   border-radius: 50%;
   position: absolute;
   animation: rotate 1s linear infinite;
+  display: none;
 }
 
 .loader::before,
@@ -31,7 +39,7 @@
   position: absolute;
   inset: 0px;
   border-radius: 50%;
-  border: 5px solid #fff;
+  border: 5px solid #000000;
   animation: prixClipFix 2s linear infinite;
 }
 .loader::after {

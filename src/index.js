@@ -11,6 +11,7 @@ const catTemperament = document.querySelector('.cat-temperament');
 
 const displayLoader = isLoading => {
   loader.style.display = isLoading ? 'block' : 'none';
+  //catInfo.style.display = isLoading ? 'none' : 'block';
 };
 
 const displayError = errorMessage => {
@@ -23,6 +24,7 @@ const displayCatInfo = catData => {
   catDescription.textContent = catData.breeds[0].description;
   catTemperament.textContent = `Temperament: ${catData.breeds[0].temperament}`;
   catInfo.style.display = 'block';
+  displayLoader(false);
 };
 
 const fetchAndDisplayBreeds = async () => {
@@ -44,7 +46,6 @@ const fetchAndDisplayCatByBreed = async breedId => {
     displayLoader(true);
     const catData = await fetchCatByBreed(breedId);
     displayCatInfo(catData);
-    displayLoader(false);
   } catch (error) {
     displayLoader(false);
     displayError('Oops! Something went wrong! Try reloading the page!');
